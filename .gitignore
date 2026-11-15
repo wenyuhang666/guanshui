@@ -1,0 +1,17 @@
+# 依赖与临时构建
+_tmp/
+node_modules/
+package-lock.json
+*.log
+
+# 开发过程截图（对外预览图见 docs/preview/）
+shots/
+
+# 含对象存储临时签名链接的上传脚本，不入库
+_upload_batch*.py
+yishu_list.txt
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini

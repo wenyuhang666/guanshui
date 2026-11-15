@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>观水 · 断易</title>
+<meta name="description" content="观水断易 —— 八字排盘、六爻问事、今日流日。断语皆出古籍，注明出处。">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23080C12'/%3E%3Ccircle cx='16' cy='17' r='7' fill='none' stroke='%23DCE8F3' stroke-width='1'/%3E%3Cellipse cx='16' cy='9' rx='2' ry='3.4' fill='%23E8F2FA'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/ma-shan-zheng/index.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="water" aria-hidden="true">
+<svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgmoon" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#EAF1F7" stop-opacity=".34"/>
+      <stop offset=".5" stop-color="#DCE6F0" stop-opacity=".17"/>
+      <stop offset="1" stop-color="#CFDCE8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bgpill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#CBD9E6" stop-opacity=".09"/>
+      <stop offset="1" stop-color="#A9BECF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bgvig" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#050810" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#04060A" stop-opacity=".48"/>
+    </linearGradient>
+    <filter id="bgblur"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="bgsoft"><feGaussianBlur stdDeviation="2"/></filter>
+    <filter id="ripwarp" x="-25%" y="-45%" width="150%" height="190%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.009 0.022" numOctaves="2" seed="5" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="bgwave" x="-5%" y="-20%" width="110%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.01 0.05" numOctaves="2" seed="9" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <ellipse cx="320" cy="120" rx="300" ry="96" fill="#B7C7D6" opacity=".028" filter="url(#bgblur)"/>
+  <ellipse cx="1120" cy="90" rx="280" ry="80" fill="#B7C7D6" opacity=".022" filter="url(#bgblur)"/>
+  <ellipse cx="202" cy="196" rx="47" ry="47" fill="#DCE7F1" opacity=".06"/>
+  <ellipse cx="202" cy="196" rx="40" ry="40" fill="url(#bgmoon)"/>
+  <path d="M175 174 a40 40 0 1 0 56 58" fill="none" stroke="#E4EDF5" stroke-width="1" opacity=".26" filter="url(#bgsoft)"/>
+  <rect x="174" y="248" width="56" height="170" fill="url(#bgpill)" filter="url(#bgblur)"/>
+  <g fill="none" stroke="#C9D8E6" filter="url(#bgwave)">
+    <g stroke-width=".6" opacity=".1" id="wave-far"></g>
+    <g stroke-width=".8" opacity=".14" id="wave-mid"></g>
+    <g stroke-width="1" opacity=".17" stroke-dasharray="340 60" id="wave-near"></g>
+  </g>
+  <rect width="1440" height="900" fill="url(#bgvig)"/>
+</svg>
+</div>
+
+<main id="app">
+
+  <!-- 首页 -->
+  <section class="view on" id="v-home">
+    <div class="brand">
+      <h1>观水</h1>
+      <p class="sub">必观其澜</p>
+    </div>
+
+    <div id="spring" aria-hidden="true">
+      <svg viewBox="0 0 600 600">
+        <defs>
+          <radialGradient id="spink" cx=".5" cy=".5" r=".5">
+            <stop offset="0" stop-color="#000306" stop-opacity=".9"/>
+            <stop offset=".5" stop-color="#04080E" stop-opacity=".6"/>
+            <stop offset="1" stop-color="#060A11" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="spring" cx=".5" cy=".5" r=".5">
+            <stop offset=".6" stop-color="#BBD2E6" stop-opacity="0"/>
+            <stop offset=".9" stop-color="#C8DBEA" stop-opacity=".09"/>
+            <stop offset=".96" stop-color="#DCEAF6" stop-opacity=".22"/>
+            <stop offset="1" stop-color="#DCEAF6" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="sdrop" x1=".2" y1="0" x2=".8" y2="1">
+            <stop offset="0" stop-color="#F2F9FF" stop-opacity=".95"/>
+            <stop offset=".45" stop-color="#C9DCEB" stop-opacity=".9"/>
+            <stop offset="1" stop-color="#8FA7BC" stop-opacity=".8"/>
+          </linearGradient>
+          <linearGradient id="stail" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#CFE2F1" stop-opacity="0"/>
+            <stop offset=".7" stop-color="#CFE2F1" stop-opacity=".26"/>
+            <stop offset="1" stop-color="#E4EFF9" stop-opacity=".55"/>
+          </linearGradient>
+          <filter id="spblur"><feGaussianBlur stdDeviation="2.2"/></filter>
+          <filter id="spinkedge" x="-55%" y="-90%" width="210%" height="280%">
+            <feTurbulence type="fractalNoise" baseFrequency=".032" numOctaves="4" seed="23" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="15" xChannelSelector="R" yChannelSelector="G"/>
+            <feGaussianBlur stdDeviation="1.2"/>
+          </filter>
+          <filter id="sglow"><feGaussianBlur stdDeviation="4.5"/></filter>
+        </defs>
+        <g class="ripple-set" fill="none" filter="url(#ripwarp)">
+          <g class="rp" style="--o:.82;animation-delay:0s"><ellipse cx="300" cy="330" rx="250" ry="74" fill="url(#spring)"/><ellipse cx="300" cy="330" rx="250" ry="74" stroke="#E7F1FA" stroke-width="1.4" vector-effect="non-scaling-stroke" opacity=".46"/><ellipse cx="300" cy="333" rx="250" ry="74" stroke="#000306" stroke-width="2.4" vector-effect="non-scaling-stroke" opacity=".26"/></g>
+          <g class="rp" style="--o:.68;animation-delay:.625s"><ellipse cx="300" cy="330" rx="250" ry="74" fill="url(#spring)"/><ellipse cx="300" cy="330" rx="250" ry="74" stroke="#E7F1FA" stroke-width="1.3" vector-effect="non-scaling-stroke" opacity=".42"/><ellipse cx="300" cy="333" rx="250" ry="74" stroke="#000306" stroke-width="2.2" vector-effect="non-scaling-stroke" opacity=".24"/></g>
+          <g class="rp" style="--o:.56;animation-delay:1.25s"><ellipse cx="300" cy="330" rx="250" ry="74" fill="url(#spring)"/><ellipse cx="300" cy="330" rx="250" ry="74" stroke="#E7F1FA" stroke-width="1.2" vector-effect="non-scaling-stroke" opacity=".38"/><ellipse cx="300" cy="333" rx="250" ry="74" stroke="#000306" stroke-width="2" vector-effect="non-scaling-stroke" opacity=".22"/></g>
+          <g class="rp" style="--o:.45;animation-delay:1.875s"><ellipse cx="300" cy="330" rx="250" ry="74" fill="url(#spring)"/><ellipse cx="300" cy="330" rx="250" ry="74" stroke="#E7F1FA" stroke-width="1.1" vector-effect="non-scaling-stroke" opacity=".34"/><ellipse cx="300" cy="333" rx="250" ry="74" stroke="#000306" stroke-width="1.9" vector-effect="non-scaling-stroke" opacity=".2"/></g>
+          <g class="rp" style="--o:.35;animation-delay:2.5s"><ellipse cx="300" cy="330" rx="250" ry="74" fill="url(#spring)"/><ellipse cx="300" cy="330" rx="250" ry="74" stroke="#E7F1FA" stroke-width="1" vector-effect="non-scaling-stroke" opacity=".3"/><ellipse cx="300" cy="333" rx="250" ry="74" stroke="#000306" stroke-width="1.8" vector-effect="non-scaling-stroke" opacity=".18"/></g>
+          <g class="rp" style="--o:.27;animation-delay:3.125s"><ellipse cx="300" cy="330" rx="250" ry="74" fill="url(#spring)"/><ellipse cx="300" cy="330" rx="250" ry="74" stroke="#E7F1FA" stroke-width=".9" vector-effect="non-scaling-stroke" opacity=".26"/><ellipse cx="300" cy="333" rx="250" ry="74" stroke="#000306" stroke-width="1.7" vector-effect="non-scaling-stroke" opacity=".16"/></g>
+          <g class="rp" style="--o:.2;animation-delay:3.75s"><ellipse cx="300" cy="330" rx="250" ry="74" fill="url(#spring)"/><ellipse cx="300" cy="330" rx="250" ry="74" stroke="#E7F1FA" stroke-width=".8" vector-effect="non-scaling-stroke" opacity=".22"/><ellipse cx="300" cy="333" rx="250" ry="74" stroke="#000306" stroke-width="1.6" vector-effect="non-scaling-stroke" opacity=".14"/></g>
+          <g class="rp" style="--o:.14;animation-delay:4.375s"><ellipse cx="300" cy="330" rx="250" ry="74" fill="url(#spring)"/><ellipse cx="300" cy="330" rx="250" ry="74" stroke="#E7F1FA" stroke-width=".7" vector-effect="non-scaling-stroke" opacity=".18"/><ellipse cx="300" cy="333" rx="250" ry="74" stroke="#000306" stroke-width="1.5" vector-effect="non-scaling-stroke" opacity=".12"/></g>
+        </g>
+        <ellipse class="inkcore" cx="300" cy="330" rx="48" ry="15" fill="url(#spink)" filter="url(#spinkedge)"/>
+        <ellipse class="spflash" cx="300" cy="327" rx="14" ry="3.8" fill="#F3FAFF" opacity=".35" filter="url(#sglow)"/>
+        <g fill="#DFEEFA">
+          <circle class="spL" cx="294" cy="324" r="2.4"/>
+          <circle class="spR" cx="306" cy="324" r="2.4"/>
+          <circle class="spR" cx="308" cy="322" r="1.4" style="animation-delay:.1s"/>
+          <circle class="spU" cx="300" cy="320" r="1.8"/>
+        </g>
+        <g class="sptail"><path d="M300 330 L300 244" stroke="url(#stail)" stroke-width="2.6" stroke-linecap="round" filter="url(#spblur)"/></g>
+        <g class="spdrop">
+          <path d="M300 346 C310 330 315 318 300 306 C285 318 290 330 300 346 Z" fill="url(#sdrop)"/>
+          <ellipse cx="296" cy="324" rx="2" ry="5.4" fill="#FFF" opacity=".65" transform="rotate(-12 296 324)"/>
+        </g>
+      </svg>
+    </div>
+
+    <nav class="drops">
+      <button class="drop" data-view="bazi" aria-label="八字排盘">
+        <svg class="body" viewBox="0 0 100 132">
+          <path class="face" d="M50 8 C68 40 88 60 88 84 A38 38 0 0 1 12 84 C12 60 32 40 50 8 Z" fill="rgba(168,196,220,.11)" stroke="rgba(220,236,248,.58)" stroke-width="1.2"/>
+          <ellipse cx="37" cy="76" rx="4.5" ry="12" fill="rgba(240,250,255,.2)" transform="rotate(-12 37 76)"/>
+          <ellipse cx="50" cy="122" rx="24" ry="4" fill="none" stroke="rgba(214,231,244,.18)" stroke-width=".8"/>
+        </svg>
+        <span class="glyph">命</span>
+        <span class="lab">八字排盘</span>
+      </button>
+      <button class="drop" data-view="liuyao" aria-label="六爻问事">
+        <svg class="body" viewBox="0 0 100 132">
+          <path class="face" d="M50 8 C68 40 88 60 88 84 A38 38 0 0 1 12 84 C12 60 32 40 50 8 Z" fill="rgba(184,210,230,.15)" stroke="rgba(228,242,252,.68)" stroke-width="1.3"/>
+          <ellipse cx="37" cy="76" rx="4.5" ry="12" fill="rgba(240,250,255,.22)" transform="rotate(-12 37 76)"/>
+          <ellipse cx="50" cy="122" rx="24" ry="4" fill="none" stroke="rgba(220,236,248,.2)" stroke-width=".8"/>
+        </svg>
+        <span class="glyph">卦</span>
+        <span class="lab">六爻问事</span>
+      </button>
+      <button class="drop" data-view="today" aria-label="今日流日">
+        <svg class="body" viewBox="0 0 100 132">
+          <path class="face" d="M50 8 C68 40 88 60 88 84 A38 38 0 0 1 12 84 C12 60 32 40 50 8 Z" fill="rgba(168,196,220,.11)" stroke="rgba(220,236,248,.58)" stroke-width="1.2"/>
+          <ellipse cx="37" cy="76" rx="4.5" ry="12" fill="rgba(240,250,255,.2)" transform="rotate(-12 37 76)"/>
+          <ellipse cx="50" cy="122" rx="24" ry="4" fill="none" stroke="rgba(214,231,244,.18)" stroke-width=".8"/>
+        </svg>
+        <span class="glyph">运</span>
+        <span class="lab">今日流日</span>
+      </button>
+    </nav>
+
+    <p class="colophon">水无常形　命无常势　<b>易藏十种 · 卦爻四百四十八</b></p>
+    <p class="disclaim">断语皆引古籍原文并注出处 · 仅供研习与娱乐</p>
+  </section>
+
+  <!-- 八字 -->
+  <section class="view" id="v-bazi">
+    <header class="head">
+      <div class="tt"><h1>排命</h1><span class="sub">八字</span></div>
+      <button class="back" data-home>回到水面</button>
+    </header>
+    <div id="bazi-form">
+      <div class="form">
+        <div class="field" style="grid-column:span 2">
+          <label>公历生辰</label>
+          <input type="date" id="birth" value="1995-08-16" min="1900-01-01" max="2035-12-31">
+        </div>
+        <div class="field">
+          <label>时辰</label>
+          <select id="hour">
+            <option value="0">子时 · 二三至一</option>
+            <option value="2">丑时 · 一至三</option>
+            <option value="4">寅时 · 三至五</option>
+            <option value="6">卯时 · 五至七</option>
+            <option value="8">辰时 · 七至九</option>
+            <option value="10">巳时 · 九至十一</option>
+            <option value="12" selected>午时 · 十一至十三</option>
+            <option value="14">未时 · 十三至十五</option>
+            <option value="16">申时 · 十五至十七</option>
+            <option value="18">酉时 · 十七至十九</option>
+            <option value="20">戌时 · 十九至廿一</option>
+            <option value="22">亥时 · 廿一至廿三</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>性别</label>
+          <div class="segs" id="sex-seg">
+            <button class="on" data-sex="1">乾造</button>
+            <button data-sex="0">坤造</button>
+          </div>
+        </div>
+      </div>
+      <div class="act">
+        <button class="btn" id="bazi-go">落墨</button>
+        <span class="hint">四柱依节气换月，非农历月</span>
+      </div>
+    </div>
+    <div id="bazi-out"></div>
+    <footer class="foot"><span>观水 · 八字</span><span>寒暑相推，五行相济</span></footer>
+  </section>
+
+  <!-- 六爻 -->
+  <section class="view" id="v-liuyao">
+    <header class="head">
+      <div class="tt"><h1>问卦</h1><span class="sub">六爻</span></div>
+      <button class="back" data-home>回到水面</button>
+    </header>
+    <div id="liuyao-form">
+      <div class="field">
+        <label>所问何事</label>
+        <input type="text" id="ask" maxlength="40" placeholder="一事一问，问得越具体，答得越准">
+      </div>
+      <div class="act">
+        <button class="btn" id="toss-go">掷钱</button>
+        <span class="hint">三枚铜钱掷六次，自下而上成卦</span>
+      </div>
+    </div>
+    <div id="liuyao-out"></div>
+    <footer class="foot"><span>观水 · 六爻</span><span>依《周易本义》变占法</span></footer>
+  </section>
+
+  <!-- 今日 -->
+  <section class="view" id="v-today">
+    <header class="head">
+      <div class="tt"><h1>流日</h1><span class="sub">今日</span></div>
+      <button class="back" data-home>回到水面</button>
+    </header>
+    <div id="today-out"></div>
+    <footer class="foot"><span>观水 · 流日</span><span>历法出《协纪》之法</span></footer>
+  </section>
+
+  <!-- 古籍 -->
+  <section class="view" id="v-books">
+    <header class="head">
+      <div class="tt"><h1>藏书</h1><span class="sub">十种</span></div>
+      <button class="back" data-home>回到水面</button>
+    </header>
+    <div class="search">
+      <input type="text" id="q" placeholder="搜一段原文，如「甲木参天」「用神有力」">
+      <button class="btn ghost" id="q-go">寻</button>
+    </div>
+    <div class="hits" id="hits"></div>
+    <footer class="foot"><span>观水 · 藏书</span><span id="bk-count"></span></footer>
+  </section>
+</main>
+
+<div id="ripple"></div>
+<div class="fade-veil" id="veil"></div>
+
+<script src="vendor/lunar.js"></script>
+<script src="data/gua.js"></script>
+<script src="data/books.js"></script>
+<script src="data/plain.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
