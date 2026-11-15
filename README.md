@@ -5,7 +5,9 @@
 一个水墨风格的命理 web 应用：**八字排盘、六爻问卦、今日流日、古籍检索**。
 纯前端、零后端、不依赖任何 API Key，双击就能跑，也能直接丢到任何静态托管上分享。
 
-**[在线体验](https://wbapp-8yu7pyqibqhbovtm6r7dpx.app.workbuddy.host/?sharecode=64DS7JODD2)**
+**[在线体验](https://wenyuhang666.github.io/guanshui/)**　·　[备用地址](https://wbapp-8yu7pyqibqhbovtm6r7dpx.app.workbuddy.host/?sharecode=64DS7JODD2)
+
+> 手机、电脑直接打开即可用。`site/` 目录通过 GitHub Actions 自动发布到 Pages，推送到 `main` 就更新。
 
 ![首页](docs/preview/home.jpg)
 
@@ -69,6 +71,7 @@ site/
 books/                十种古籍原始文本（简体纯文本，构建数据的输入）
 build_data.py         books/ → site/data/gua.js + books.js
 docs/                 技术方案、UI 设计大纲、开发记录、预览图
+.github/workflows/    推送到 main 即自动把 site/ 发布到 GitHub Pages
 ```
 
 ## 数据是怎么来的
